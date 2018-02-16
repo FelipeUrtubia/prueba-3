@@ -1,0 +1,11 @@
+<div class="text-center">
+<%= form_with(model: @todo, local: true) do |form|%>
+  <%= form.label :descripción%>
+  <br>
+  <%= form.text_area :description%>
+  <br><br>
+  <%= form.submit 'Crear'%>
+<%end%>
+<br><br>
+<%= link_to 'Volver a index', root_path%>
+</div>

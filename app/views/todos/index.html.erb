@@ -1,0 +1,36 @@
+<h5>
+  <%= notice%>
+</h5>
+<br>
+<h1 class="text-center">Esta es tu lista de tareas</h1>
+<br><br>
+<% @todos.each do |todos|%>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-center" style="width: 95%;">
+      <div class="card-body bg-light">
+
+        <h5 class="card-title"><%=link_to todos.description, show_todo_path(todos)%></h5>
+        <!-- <h5 class="card-title"><%=todos.description%></h5> -->
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 95%;">
+      <div class="card-body bg-light">
+        <%= link_to 'Cambiar estado ', cambiar_estado_path(todos)%>
+        <%= link_to 'Editar ', edit_todo_path(todos)%>
+        <%= link_to 'Eliminar', destroy_todo_path(todos), method: :delete%>
+
+        <%if todos.completed == false%>
+          <li class="list-group-item border-primary">Pendiente</li>
+        <%else%>
+          <li class="list-group-item border-success">Completado</li>
+        <%end%>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+<%end%>

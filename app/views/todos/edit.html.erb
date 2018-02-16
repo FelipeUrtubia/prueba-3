@@ -1,0 +1,14 @@
+<div class="text-center">
+  
+<h1>Editar el ToDo</h1>
+
+<%= form_with(model: @todo, local: true) do |form|%>
+  <%= form.label :descripción%>
+  <br>
+  <%= form.text_area :description%>
+  <br><br>
+  <%= form.submit 'Actualizar'%>
+<%end%>
+<br><br>
+<%= link_to 'Volver a index', root_path%>
+</div>

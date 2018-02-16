@@ -1,0 +1,32 @@
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 100%">
+        <div class="card-header text-center">
+          Tareas sin completar
+        </div>
+        <ul class="list-group list-group-flush mb-3 text-center">
+          <% @todos.each do |todos|%>
+            <br>
+            <%if todos.completed == false%>
+               <li class="list-group-item border-primary"><%=todos.description%></li>
+            <%end%>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="width: 100%">
+        <div class="card-header text-center">
+          Tareas completadas
+        </div>
+        <ul class="list-group list-group-flush mb-3 text-center">
+          <% @todos.each do |todos|%>
+            <br>
+            <%if todos.completed == true%>
+               <li class="list-group-item border-success"><%=todos.description%></li>
+            <%end%>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
